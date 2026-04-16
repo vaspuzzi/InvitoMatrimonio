@@ -1,8 +1,8 @@
 /* Placeholder configuration: edit values here */
 window.WEDDING_CONFIG = {
   coupleNames: "Anastasia & Federico",
-  weddingDateShort: "Sabato 19 Settembre 2026",
-  weddingDateLong: "Sabato 19 Settembre 2026",
+  weddingDateShort: "Sabato 5 Settembre 2026",
+  weddingDateLong: "Sabato 5 Settembre 2026",
   weddingCity: "Fidenza",
   heroPhrase: "Una frase breve e significativa che verrà personalizzata.",
 
@@ -11,9 +11,9 @@ window.WEDDING_CONFIG = {
   ceremonyLocationName: "Chiesa Di San Francesco D'Assisi",
   ceremonyAddress: "Via San Francesco D'Assisi, 7, 43036 Fidenza PR",
   ceremonyMapsUrl: "https://maps.app.goo.gl/y8rQKUTD7RQhWKgr5",
-  receptionLocationName: "Ristorante Placeholder",
-  receptionAddress: "Via dei Tigli 10, Città",
-  receptionMapsUrl: "https://maps.google.com",
+  receptionLocationName: "Il colore del grano",
+  receptionAddress: "Località San Vittore, 44, 43039 Salsomaggiore Terme PR",
+  receptionMapsUrl: "https://maps.app.goo.gl/wH5LzQTxiP5AfQ8z7",
 
   program: [
     { time: "10:30", label: "Cerimonia" },
@@ -27,9 +27,9 @@ window.WEDDING_CONFIG = {
     "https://docs.google.com/forms/d/e/1FAIpQLSedfVg4LC3zGojCzxNLQghnTwpLj7i8p1lj472K2JQJIlJ_LQ/viewform?usp=dialog&embedded=true",
 
   faq: [
-    { title: "Dress code", text: "Elegante ma comodo." },
-    { title: "Parcheggio", text: "Parcheggio disponibile accanto alla location." },
-    { title: "Meteo", text: "La festa si terrà in spazi coperti." },
+    { title: "Dress code", text: "Elegante ma comodo. Un dettaglio verde oliva è molto apprezzato." },
+    { title: "Parcheggio", text: "Parcheggio disponibile accanto all'agriturismo." },
+    { title: "Meteo", text: "In caso di pioggia, la festa si terrà al coperto." },
   ],
 
   giftsText:

@@ -1,2 +1,1 @@
-- Collegare google form e google sheet per tenere traccia delle risposte.
 - Grafica
