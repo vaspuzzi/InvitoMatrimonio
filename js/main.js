@@ -1,9 +1,11 @@
 (() => {
   const config = window.WEDDING_CONFIG || {};
 
+  /* ---------- Popolamento testi e attributi ---------- */
+
   const setText = (key) => {
     const value = config[key];
-    if (!value) return;
+    if (value === undefined || value === null) return;
     document.querySelectorAll(`[data-config="${key}"]`).forEach((el) => {
       el.textContent = value;
     });
@@ -39,6 +41,15 @@
   setAttr("receptionMapsUrl", "href");
   setAttr("rsvpFormUrl", "src");
 
+  /* ---------- Foto sposi ---------- */
+
+  const couplePhoto = document.getElementById("couplePhoto");
+  if (couplePhoto && config.coupleImage) {
+    couplePhoto.src = config.coupleImage;
+  }
+
+  /* ---------- Programma e FAQ dinamici ---------- */
+
   const programList = document.getElementById("programList");
   if (programList && Array.isArray(config.program) && config.program.length) {
     programList.innerHTML = "";
@@ -60,6 +71,8 @@
     });
   }
 
+  /* ---------- IBAN ---------- */
+
   const ibanBox = document.getElementById("ibanBox");
   if (ibanBox && !config.giftsIban) {
     ibanBox.style.display = "none";
@@ -79,5 +92,91 @@
         copyFeedback.textContent = "";
       }, 2000);
     });
+  }
+
+  /* ---------- Video dialog ---------- */
+
+  const footerTrigger = document.getElementById("footerTrigger");
+  const videoDialog = document.getElementById("videoDialog");
+  const closeVideoBtn = document.getElementById("closeVideoBtn");
+  const storyVideo = document.getElementById("storyVideo");
+  const videoSource = storyVideo ? storyVideo.querySelector("source") : null;
+  const videoDownloadLink = document.getElementById("videoDownloadLink");
+
+  if (footerTrigger && videoDialog && storyVideo) {
+    if (config.videoEnabled === false) {
+      footerTrigger.disabled = true;
+      footerTrigger.classList.add("is-disabled");
+    } else {
+      if (config.videoUrl && videoSource) {
+        videoSource.setAttribute("src", config.videoUrl);
+        if (videoDownloadLink) videoDownloadLink.setAttribute("href", config.videoUrl);
+      }
+      if (config.videoPoster) {
+        storyVideo.setAttribute("poster", config.videoPoster);
+      }
+      // Necessario dopo aver cambiato il src di <source>: forza il browser
+      // a rileggere la sorgente, altrimenti continua a usare quella iniziale.
+      try {
+        storyVideo.load();
+      } catch (e) {
+        /* noop */
+      }
+
+      // Log diagnostico: mostra in console se il video fallisce a caricarsi
+      storyVideo.addEventListener("error", () => {
+        const err = storyVideo.error;
+        console.error(
+          "[video] Errore caricamento:",
+          err ? `code=${err.code} message=${err.message}` : "sconosciuto",
+          "src=",
+          videoSource ? videoSource.getAttribute("src") : "(nessun source)"
+        );
+      });
+
+      const openDialog = () => {
+        if (typeof videoDialog.showModal === "function") {
+          videoDialog.showModal();
+        } else {
+          videoDialog.setAttribute("open", "");
+        }
+      };
+
+      const closeDialog = () => {
+        try {
+          storyVideo.pause();
+        } catch (e) {
+          /* noop */
+        }
+        if (typeof videoDialog.close === "function") {
+          videoDialog.close();
+        } else {
+          videoDialog.removeAttribute("open");
+        }
+      };
+
+      footerTrigger.addEventListener("click", openDialog);
+
+      if (closeVideoBtn) {
+        closeVideoBtn.addEventListener("click", closeDialog);
+      }
+
+      // Chiudi cliccando sul backdrop (l'evento arriva sul dialog stesso,
+      // i child non lo intercettano)
+      videoDialog.addEventListener("click", (e) => {
+        if (e.target === videoDialog) {
+          closeDialog();
+        }
+      });
+
+      // Pause anche su chiusura via ESC (gestita da <dialog> nativo)
+      videoDialog.addEventListener("close", () => {
+        try {
+          storyVideo.pause();
+        } catch (e) {
+          /* noop */
+        }
+      });
+    }
   }
 })();

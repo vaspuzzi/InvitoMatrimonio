@@ -3,70 +3,92 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Invito al Matrimonio</title>
+    <title>Federico &amp; Anastasia — Invito al Matrimonio</title>
     <meta
       name="description"
-      content="Invito al matrimonio con dettagli su data, location e conferma presenza."
+      content="Invito al matrimonio di Anastasia e Federico: data, location, programma e conferma presenza."
     />
+    <meta name="theme-color" content="#556238" />
     <link rel="icon" href="assets/images/favicon.svg" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Great+Vibes&family=Source+Sans+3:wght@300;400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Great+Vibes&family=Source+Sans+3:wght@300;400;500;600&display=swap"
     />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header class="site-header">
-      <nav class="nav">
-        <a href="#hero">Invito</a>
-        <a href="#quando-dove">Quando e dove</a>
-        <a href="#programma">Programma</a>
-        <a href="#rsvp">RSVP</a>
-        <a href="#info">Info utili</a>
-        <a href="#regali">Regali</a>
-      </nav>
+      <div class="container header-inner">
+        <a href="#hero" class="brand" aria-label="Torna in cima">A &amp; F</a>
+        <nav class="nav" aria-label="Navigazione principale">
+          <a href="#hero">Invito</a>
+          <a href="#quando-dove">Quando e dove</a>
+          <a href="#programma">Programma</a>
+          <a href="#rsvp">RSVP</a>
+          <a href="#info">Info utili</a>
+          <a href="#regali">Regali</a>
+        </nav>
+      </div>
     </header>
 
     <main>
+      <!-- ============== HERO ============== -->
       <section id="hero" class="section hero">
         <div class="container">
-          <div class="hero-frame">
-            <div class="hero-grid">
-              <div class="hero-content">
-                <p class="eyebrow">Con grande gioia</p>
-                <h1 class="hero-title" data-config="coupleNames">
-                  Nome Sposa &amp; Nome Sposo
-                </h1>
-                <p class="hero-date" data-config="weddingDateShort">
-                  Sabato 20 Settembre 2026
-                </p>
-                <p class="hero-location" data-config="weddingCity">Città</p>
-                <p class="hero-quote" data-config="heroPhrase">
-                  Una frase breve e significativa che verrà personalizzata.
-                </p>
-                <div class="hero-actions">
-                  <a class="btn" href="#rsvp">Conferma presenza</a>
-                  <a class="btn secondary" href="#quando-dove">Dettagli evento</a>
-                </div>
+          <div class="hero-grid">
+            <div class="hero-content">
+              <p class="eyebrow">Sei invitato al matrimonio di</p>
+              <h1 class="hero-title" data-config="coupleNames">
+                Federico &amp; Anastasia
+              </h1>
+              <div class="hero-divider" aria-hidden="true">
+                <span class="line"></span>
+                <span class="leaf"></span>
+                <span class="line"></span>
               </div>
-              <div class="hero-image">
-                <img src="assets/images/couple.svg" alt="Illustrazione sposi" />
+              <p class="hero-date" data-config="weddingDateShort">
+                Sabato 5 Settembre 2026
+              </p>
+              <p class="hero-location" data-config="weddingCity">Fidenza</p>
+              <div class="hero-actions">
+                <a class="btn" href="#rsvp">Conferma presenza</a>
+                <a class="btn secondary" href="#quando-dove">Dettagli evento</a>
+              </div>
+            </div>
+            <div class="hero-photo">
+              <div class="photo-frame">
+                <img
+                  id="couplePhoto"
+                  src="assets/images/photo-placeholder.svg"
+                  alt="Foto degli sposi"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- ============== QUANDO E DOVE ============== -->
       <section id="quando-dove" class="section">
         <div class="container">
-          <h2>Quando e dove</h2>
+          <div class="section-title">
+            <p class="eyebrow">Save the date</p>
+            <h2>Quando e dove</h2>
+          </div>
+
           <div class="grid two">
             <article class="card">
+              <div class="card-icon">
+                <img src="assets/images/icons/church.svg" alt="" aria-hidden="true" />
+              </div>
               <h3>Cerimonia</h3>
-              <p class="detail" data-config="weddingDateLong">Sabato 20 Settembre 2026</p>
-              <p class="detail" data-config="ceremonyTime">Ore 11:00</p>
+              <p class="detail" data-config="weddingDateLong">Sabato 5 Settembre 2026</p>
+              <p class="detail" data-config="ceremonyTime">Ore 10:30</p>
+              <span class="card-divider" aria-hidden="true"></span>
               <p class="detail" data-config="ceremonyLocationName">Chiesa Placeholder</p>
-              <p class="detail" data-config="ceremonyAddress">
+              <p class="detail muted" data-config="ceremonyAddress">
                 Via delle Rose 1, Città
               </p>
               <a
@@ -74,16 +96,21 @@
                 data-config="ceremonyMapsUrl"
                 href="https://maps.google.com"
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
                 >Apri su Google Maps</a
               >
             </article>
+
             <article class="card">
+              <div class="card-icon">
+                <img src="assets/images/icons/wine.svg" alt="" aria-hidden="true" />
+              </div>
               <h3>Ricevimento</h3>
-              <p class="detail" data-config="weddingDateLong">Sabato 20 Settembre 2026</p>
-              <p class="detail" data-config="receptionTime">Ore 13:00</p>
+              <p class="detail" data-config="weddingDateLong">Sabato 5 Settembre 2026</p>
+              <p class="detail" data-config="receptionTime">Ore 12:00</p>
+              <span class="card-divider" aria-hidden="true"></span>
               <p class="detail" data-config="receptionLocationName">Ristorante Placeholder</p>
-              <p class="detail" data-config="receptionAddress">
+              <p class="detail muted" data-config="receptionAddress">
                 Via dei Tigli 10, Città
               </p>
               <a
@@ -91,7 +118,7 @@
                 data-config="receptionMapsUrl"
                 href="https://maps.google.com"
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
                 >Apri su Google Maps</a
               >
             </article>
@@ -99,16 +126,21 @@
         </div>
       </section>
 
+      <!-- ============== PROGRAMMA ============== -->
       <section id="programma" class="section alt">
         <div class="container">
-          <h2>Programma della giornata</h2>
+          <div class="section-title">
+            <p class="eyebrow">La giornata</p>
+            <h2>Programma</h2>
+          </div>
+
           <ul class="timeline" id="programList">
             <li>
-              <span class="time">11:00</span>
+              <span class="time">10:30</span>
               <span class="label">Cerimonia</span>
             </li>
             <li>
-              <span class="time">12:30</span>
+              <span class="time">12:00</span>
               <span class="label">Aperitivo</span>
             </li>
             <li>
@@ -123,30 +155,49 @@
         </div>
       </section>
 
+      <!-- ============== RSVP ============== -->
       <section id="rsvp" class="section">
         <div class="container">
-          <h2>RSVP – Conferma presenza</h2>
-          <p class="detail">
-            Vi chiediamo di confermare entro
-            <strong data-config="rsvpDeadline">30 Giugno 2026</strong>.
-          </p>
-          <div class="form-embed">
-            <iframe
-              title="Conferma presenza"
-              data-config="rsvpFormUrl"
-              src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true"
-              loading="lazy"
-            ></iframe>
+          <div class="section-title">
+            <p class="eyebrow">Vi aspettiamo</p>
+            <h2>Conferma presenza</h2>
           </div>
-          <p class="helper">
-            Se non riesci a compilare il form, contattaci direttamente.
-          </p>
+
+          <div class="rsvp-wrap">
+            <div class="rsvp-badge">
+              <img src="assets/images/icons/calendar.svg" alt="" aria-hidden="true" />
+              <span>Confermare entro&nbsp;<strong data-config="rsvpDeadline">30 Giugno 2026</strong></span>
+            </div>
+
+            <p class="rsvp-intro">
+              Compila il modulo qui sotto: ci aiuterà a organizzare al meglio la
+              giornata. Ti basterà qualche minuto.
+            </p>
+
+            <div class="form-embed">
+              <iframe
+                title="Modulo conferma presenza"
+                data-config="rsvpFormUrl"
+                src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true"
+                loading="lazy"
+              ></iframe>
+            </div>
+
+            <p class="helper">
+              Se non riesci a compilare il modulo, contattaci direttamente.
+            </p>
+          </div>
         </div>
       </section>
 
+      <!-- ============== INFO UTILI ============== -->
       <section id="info" class="section alt">
         <div class="container">
-          <h2>Informazioni utili</h2>
+          <div class="section-title">
+            <p class="eyebrow">Per saperne di più</p>
+            <h2>Informazioni utili</h2>
+          </div>
+
           <div class="faq" id="faqList">
             <article class="faq-item">
               <h3>Dress code</h3>
@@ -164,29 +215,79 @@
         </div>
       </section>
 
+      <!-- ============== REGALI ============== -->
       <section id="regali" class="section">
         <div class="container">
-          <h2>Regali / Lista nozze</h2>
-          <p class="detail" data-config="giftsText">
-            La vostra presenza è il dono più grande. Se desiderate farci un
-            regalo, potete contribuire al nostro viaggio.
-          </p>
-          <div class="iban-box" id="ibanBox">
-            <span class="iban-label">IBAN</span>
-            <span class="iban-value" data-config="giftsIban">IT00X0000000000000000000000</span>
-            <button class="btn small" id="copyIban">Copia IBAN</button>
-            <span class="copy-feedback" id="copyFeedback" aria-live="polite"></span>
+          <div class="gifts-wrap">
+            <p class="detail" data-config="giftsText">
+              La vostra presenza è il dono più grande. Se desiderate farci un
+              regalo, potete contribuire al nostro viaggio.
+            </p>
+            <div class="iban-box" id="ibanBox">
+              <span class="iban-label">IBAN</span>
+              <span class="iban-value" data-config="giftsIban">IT00X0000000000000000000000</span>
+              <button class="btn small" id="copyIban" type="button">Copia IBAN</button>
+              <span class="copy-feedback" id="copyFeedback" aria-live="polite"></span>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
+    <!-- ============== FOOTER ============== -->
     <footer class="site-footer">
       <div class="container">
-        <p class="detail" data-config="footerMessage">Non vediamo l'ora di festeggiare con voi.</p>
-        <p class="detail" data-config="coupleNames">Nome Sposa &amp; Nome Sposo</p>
+        <div class="footer-monogram" aria-hidden="true">A &amp; F</div>
+        <div class="footer-divider" aria-hidden="true"></div>
+        <button
+          class="footer-trigger"
+          id="footerTrigger"
+          type="button"
+          aria-haspopup="dialog"
+          aria-controls="videoDialog"
+        >
+          <span class="footer-trigger-text" data-config="footerMessage"
+            >Non vediamo l'ora di festeggiare con voi.</span
+          >
+          <svg
+            class="footer-trigger-icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.4" />
+            <polygon points="10,8 10,16 16,12" fill="currentColor" />
+          </svg>
+        </button>
+        <p class="detail couple" data-config="coupleNames">Federico &amp; Anastasia</p>
       </div>
     </footer>
+
+    <!-- ============== DIALOG VIDEO ============== -->
+    <dialog class="video-dialog" id="videoDialog" aria-label="Il nostro video">
+      <button
+        class="video-dialog-close"
+        id="closeVideoBtn"
+        type="button"
+        aria-label="Chiudi video"
+      >
+        &times;
+      </button>
+      <video
+        class="video-dialog-player"
+        id="storyVideo"
+        controls
+        playsinline
+        preload="metadata"
+        poster="assets/images/video-poster.svg"
+      >
+        <source src="assets/videos/our-story.mp4" type="video/mp4" />
+        <p class="video-fallback">
+          Il tuo browser non supporta il tag video. Puoi
+          <a id="videoDownloadLink" href="assets/videos/our-story.mp4">scaricare il video</a>.
+        </p>
+      </video>
+    </dialog>
 
     <script src="js/config.js"></script>
     <script src="js/main.js"></script>

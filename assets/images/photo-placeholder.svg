@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#fbf6ee" />
+      <stop offset="100%" stop-color="#ede4d2" />
+    </radialGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg)" />
+  <g fill="none" stroke="#7d8c5c" stroke-width="1.2" opacity="0.55">
+    <circle cx="200" cy="240" r="150" />
+    <circle cx="200" cy="240" r="158" stroke-dasharray="2 6" />
+  </g>
+  <g fill="#a9b95f" stroke="#556238" stroke-width="0.8" opacity="0.85">
+    <ellipse cx="200" cy="100" rx="6" ry="14" />
+    <ellipse cx="180" cy="115" rx="6" ry="13" transform="rotate(-25 180 115)" />
+    <ellipse cx="220" cy="115" rx="6" ry="13" transform="rotate(25 220 115)" />
+    <ellipse cx="160" cy="135" rx="6" ry="12" transform="rotate(-45 160 135)" />
+    <ellipse cx="240" cy="135" rx="6" ry="12" transform="rotate(45 240 135)" />
+  </g>
+  <g font-family="Georgia, serif" fill="#7d8c5c" text-anchor="middle">
+    <text x="200" y="255" font-size="48" font-style="italic" opacity="0.55">la vostra foto</text>
+    <text x="200" y="295" font-size="20" letter-spacing="4" opacity="0.45">A &amp; F</text>
+  </g>
+  <g fill="#a9b95f" stroke="#556238" stroke-width="0.8" opacity="0.85">
+    <ellipse cx="200" cy="380" rx="6" ry="14" />
+    <ellipse cx="180" cy="365" rx="6" ry="13" transform="rotate(25 180 365)" />
+    <ellipse cx="220" cy="365" rx="6" ry="13" transform="rotate(-25 220 365)" />
+    <ellipse cx="160" cy="345" rx="6" ry="12" transform="rotate(45 160 345)" />
+    <ellipse cx="240" cy="345" rx="6" ry="12" transform="rotate(-45 240 345)" />
+  </g>
+</svg>
